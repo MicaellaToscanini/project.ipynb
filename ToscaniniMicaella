@@ -1,0 +1,825 @@
+"""
+Created on Tue Aug 27 16:05:43 2024
+
+@author: Micaella
+"""
+
+
+import re
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1990.html')
+           
+
+pattern = 'year'
+pattern1 = '\d{4}'
+pattern2 = '<tr align="right"><td>'
+pattern3 = '\d{1,}'
+pattern4 = '[A-Z][a-z]*'
+
+mi_diccionario = {}
+
+
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        print(result)
+        result = re.findall(pattern1, line)
+        if result:
+            print(result)
+
+    result = re.findall(pattern2, line)
+    if result:
+        resultRank = re.findall(pattern3, line)
+        print(resultRank)
+        
+        result = re.findall(pattern4, line)
+        if result:
+            print(result)
+            mi_diccionario[str(resultRank)] = result
+             
+print(mi_diccionario)
+
+
+mi_lista = []
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1990.html')
+for line in file:
+    result = re.findall(pattern4, line)
+    if result:
+        mi_lista.append(result[0])
+
+mi_lista.sort()
+print(mi_lista)
+
+
+mi_lista2 = []
+anio = None  
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1990.html')
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        anio_match = re.search(pattern1, line)
+        if anio_match:
+            anio = anio_match.group(0)
+            print(anio)
+
+    
+    result = re.search(pattern2, line)
+    if result:
+        resultRank = re.search(pattern3, line)
+        name = re.search(pattern4, line)
+        if resultRank and name and anio:
+            mi_lista2.append((anio, resultRank.group(0), name.group(0)))
+
+mi_lista2.sort(key=lambda x: x[2])
+print(mi_lista2)
+
+
+pos = 2  
+list_length = len(mi_lista2)
+for i in range(0, list_length):
+    for j in range(0, list_length - i - 1):
+        if mi_lista2[j][pos] > mi_lista2[j + 1][pos]:
+            temp = mi_lista2[j]
+            mi_lista2[j] = mi_lista2[j + 1]
+            mi_lista2[j + 1] = temp
+            
+print(mi_lista2)
+
+
+import re
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1992.html')
+           
+
+pattern = 'year'
+pattern1 = '\d{4}'
+pattern2 = '<tr align="right"><td>'
+pattern3 = '\d{1,}'
+pattern4 = '[A-Z][a-z]*'
+
+mi_diccionario = {}
+
+
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        print(result)
+        result = re.findall(pattern1, line)
+        if result:
+            print(result)
+
+    result = re.findall(pattern2, line)
+    if result:
+        resultRank = re.findall(pattern3, line)
+        print(resultRank)
+        
+        result = re.findall(pattern4, line)
+        if result:
+            print(result)
+            mi_diccionario[str(resultRank)] = result
+             
+print(mi_diccionario)
+
+
+mi_lista = []
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1992.html')
+for line in file:
+    result = re.findall(pattern4, line)
+    if result:
+        mi_lista.append(result[0])
+
+mi_lista.sort()
+print(mi_lista)
+
+
+mi_lista2 = []
+anio = None  
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1992.html')
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        anio_match = re.search(pattern1, line)
+        if anio_match:
+            anio = anio_match.group(0)
+            print(anio)
+
+    
+    result = re.search(pattern2, line)
+    if result:
+        resultRank = re.search(pattern3, line)
+        name = re.search(pattern4, line)
+        if resultRank and name and anio:
+            mi_lista2.append((anio, resultRank.group(0), name.group(0)))
+
+mi_lista2.sort(key=lambda x: x[2])
+print(mi_lista2)
+
+
+pos = 2  
+list_length = len(mi_lista2)
+for i in range(0, list_length):
+    for j in range(0, list_length - i - 1):
+        if mi_lista2[j][pos] > mi_lista2[j + 1][pos]:
+            temp = mi_lista2[j]
+            mi_lista2[j] = mi_lista2[j + 1]
+            mi_lista2[j + 1] = temp
+            
+print(mi_lista2)
+
+
+import re
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1994.html')
+           
+
+pattern = 'year'
+pattern1 = '\d{4}'
+pattern2 = '<tr align="right"><td>'
+pattern3 = '\d{1,}'
+pattern4 = '[A-Z][a-z]*'
+
+mi_diccionario = {}
+
+
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        print(result)
+        result = re.findall(pattern1, line)
+        if result:
+            print(result)
+
+    result = re.findall(pattern2, line)
+    if result:
+        resultRank = re.findall(pattern3, line)
+        print(resultRank)
+        
+        result = re.findall(pattern4, line)
+        if result:
+            print(result)
+            mi_diccionario[str(resultRank)] = result
+             
+print(mi_diccionario)
+
+
+mi_lista = []
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1994.html')
+for line in file:
+    result = re.findall(pattern4, line)
+    if result:
+        mi_lista.append(result[0])
+
+mi_lista.sort()
+print(mi_lista)
+
+
+mi_lista2 = []
+anio = None  
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1994.html')
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        anio_match = re.search(pattern1, line)
+        if anio_match:
+            anio = anio_match.group(0)
+            print(anio)
+
+    
+    result = re.search(pattern2, line)
+    if result:
+        resultRank = re.search(pattern3, line)
+        name = re.search(pattern4, line)
+        if resultRank and name and anio:
+            mi_lista2.append((anio, resultRank.group(0), name.group(0)))
+
+mi_lista2.sort(key=lambda x: x[2])
+print(mi_lista2)
+
+
+pos = 2  
+list_length = len(mi_lista2)
+for i in range(0, list_length):
+    for j in range(0, list_length - i - 1):
+        if mi_lista2[j][pos] > mi_lista2[j + 1][pos]:
+            temp = mi_lista2[j]
+            mi_lista2[j] = mi_lista2[j + 1]
+            mi_lista2[j + 1] = temp
+            
+print(mi_lista2)
+
+
+import re
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1996.html')
+           
+
+pattern = 'year'
+pattern1 = '\d{4}'
+pattern2 = '<tr align="right"><td>'
+pattern3 = '\d{1,}'
+pattern4 = '[A-Z][a-z]*'
+
+mi_diccionario = {}
+
+
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        print(result)
+        result = re.findall(pattern1, line)
+        if result:
+            print(result)
+
+    result = re.findall(pattern2, line)
+    if result:
+        resultRank = re.findall(pattern3, line)
+        print(resultRank)
+        
+        result = re.findall(pattern4, line)
+        if result:
+            print(result)
+            mi_diccionario[str(resultRank)] = result
+             
+print(mi_diccionario)
+
+
+mi_lista = []
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1996.html')
+for line in file:
+    result = re.findall(pattern4, line)
+    if result:
+        mi_lista.append(result[0])
+
+mi_lista.sort()
+print(mi_lista)
+
+
+mi_lista2 = []
+anio = None  
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1996.html')
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        anio_match = re.search(pattern1, line)
+        if anio_match:
+            anio = anio_match.group(0)
+            print(anio)
+
+    
+    result = re.search(pattern2, line)
+    if result:
+        resultRank = re.search(pattern3, line)
+        name = re.search(pattern4, line)
+        if resultRank and name and anio:
+            mi_lista2.append((anio, resultRank.group(0), name.group(0)))
+
+mi_lista2.sort(key=lambda x: x[2])
+print(mi_lista2)
+
+
+pos = 2  
+list_length = len(mi_lista2)
+for i in range(0, list_length):
+    for j in range(0, list_length - i - 1):
+        if mi_lista2[j][pos] > mi_lista2[j + 1][pos]:
+            temp = mi_lista2[j]
+            mi_lista2[j] = mi_lista2[j + 1]
+            mi_lista2[j + 1] = temp
+            
+print(mi_lista2)
+
+
+import re
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1998.html')
+           
+
+pattern = 'year'
+pattern1 = '\d{4}'
+pattern2 = '<tr align="right"><td>'
+pattern3 = '\d{1,}'
+pattern4 = '[A-Z][a-z]*'
+
+mi_diccionario = {}
+
+
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        print(result)
+        result = re.findall(pattern1, line)
+        if result:
+            print(result)
+
+    result = re.findall(pattern2, line)
+    if result:
+        resultRank = re.findall(pattern3, line)
+        print(resultRank)
+        
+        result = re.findall(pattern4, line)
+        if result:
+            print(result)
+            mi_diccionario[str(resultRank)] = result
+             
+print(mi_diccionario)
+
+
+mi_lista = []
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1998.html')
+for line in file:
+    result = re.findall(pattern4, line)
+    if result:
+        mi_lista.append(result[0])
+
+mi_lista.sort()
+print(mi_lista)
+
+
+mi_lista2 = []
+anio = None  
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby1998.html')
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        anio_match = re.search(pattern1, line)
+        if anio_match:
+            anio = anio_match.group(0)
+            print(anio)
+
+    
+    result = re.search(pattern2, line)
+    if result:
+        resultRank = re.search(pattern3, line)
+        name = re.search(pattern4, line)
+        if resultRank and name and anio:
+            mi_lista2.append((anio, resultRank.group(0), name.group(0)))
+
+mi_lista2.sort(key=lambda x: x[2])
+print(mi_lista2)
+
+
+pos = 2  
+list_length = len(mi_lista2)
+for i in range(0, list_length):
+    for j in range(0, list_length - i - 1):
+        if mi_lista2[j][pos] > mi_lista2[j + 1][pos]:
+            temp = mi_lista2[j]
+            mi_lista2[j] = mi_lista2[j + 1]
+            mi_lista2[j + 1] = temp
+            
+print(mi_lista2)
+
+
+import re
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2000.html')
+           
+
+pattern = 'year'
+pattern1 = '\d{4}'
+pattern2 = '<tr align="right"><td>'
+pattern3 = '\d{1,}'
+pattern4 = '[A-Z][a-z]*'
+
+mi_diccionario = {}
+
+
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        print(result)
+        result = re.findall(pattern1, line)
+        if result:
+            print(result)
+
+    result = re.findall(pattern2, line)
+    if result:
+        resultRank = re.findall(pattern3, line)
+        print(resultRank)
+        
+        result = re.findall(pattern4, line)
+        if result:
+            print(result)
+            mi_diccionario[str(resultRank)] = result
+             
+print(mi_diccionario)
+
+
+mi_lista = []
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2000.html')
+for line in file:
+    result = re.findall(pattern4, line)
+    if result:
+        mi_lista.append(result[0])
+
+mi_lista.sort()
+print(mi_lista)
+
+
+mi_lista2 = []
+anio = None  
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2000.html')
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        anio_match = re.search(pattern1, line)
+        if anio_match:
+            anio = anio_match.group(0)
+            print(anio)
+
+    
+    result = re.search(pattern2, line)
+    if result:
+        resultRank = re.search(pattern3, line)
+        name = re.search(pattern4, line)
+        if resultRank and name and anio:
+            mi_lista2.append((anio, resultRank.group(0), name.group(0)))
+
+mi_lista2.sort(key=lambda x: x[2])
+print(mi_lista2)
+
+
+pos = 2  
+list_length = len(mi_lista2)
+for i in range(0, list_length):
+    for j in range(0, list_length - i - 1):
+        if mi_lista2[j][pos] > mi_lista2[j + 1][pos]:
+            temp = mi_lista2[j]
+            mi_lista2[j] = mi_lista2[j + 1]
+            mi_lista2[j + 1] = temp
+            
+print(mi_lista2)
+
+
+import re
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2002.html')
+           
+
+pattern = 'year'
+pattern1 = '\d{4}'
+pattern2 = '<tr align="right"><td>'
+pattern3 = '\d{1,}'
+pattern4 = '[A-Z][a-z]*'
+
+mi_diccionario = {}
+
+
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        print(result)
+        result = re.findall(pattern1, line)
+        if result:
+            print(result)
+
+    result = re.findall(pattern2, line)
+    if result:
+        resultRank = re.findall(pattern3, line)
+        print(resultRank)
+        
+        result = re.findall(pattern4, line)
+        if result:
+            print(result)
+            mi_diccionario[str(resultRank)] = result
+             
+print(mi_diccionario)
+
+
+mi_lista = []
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2002.html')
+for line in file:
+    result = re.findall(pattern4, line)
+    if result:
+        mi_lista.append(result[0])
+
+mi_lista.sort()
+print(mi_lista)
+
+
+mi_lista2 = []
+anio = None  
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2002.html')
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        anio_match = re.search(pattern1, line)
+        if anio_match:
+            anio = anio_match.group(0)
+            print(anio)
+
+    
+    result = re.search(pattern2, line)
+    if result:
+        resultRank = re.search(pattern3, line)
+        name = re.search(pattern4, line)
+        if resultRank and name and anio:
+            mi_lista2.append((anio, resultRank.group(0), name.group(0)))
+
+mi_lista2.sort(key=lambda x: x[2])
+print(mi_lista2)
+
+
+pos = 2  
+list_length = len(mi_lista2)
+for i in range(0, list_length):
+    for j in range(0, list_length - i - 1):
+        if mi_lista2[j][pos] > mi_lista2[j + 1][pos]:
+            temp = mi_lista2[j]
+            mi_lista2[j] = mi_lista2[j + 1]
+            mi_lista2[j + 1] = temp
+            
+print(mi_lista2)
+
+
+import re
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2004.html')
+           
+
+pattern = 'year'
+pattern1 = '\d{4}'
+pattern2 = '<tr align="right"><td>'
+pattern3 = '\d{1,}'
+pattern4 = '[A-Z][a-z]*'
+
+mi_diccionario = {}
+
+
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        print(result)
+        result = re.findall(pattern1, line)
+        if result:
+            print(result)
+
+    result = re.findall(pattern2, line)
+    if result:
+        resultRank = re.findall(pattern3, line)
+        print(resultRank)
+        
+        result = re.findall(pattern4, line)
+        if result:
+            print(result)
+            mi_diccionario[str(resultRank)] = result
+             
+print(mi_diccionario)
+
+
+mi_lista = []
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2004.html')
+for line in file:
+    result = re.findall(pattern4, line)
+    if result:
+        mi_lista.append(result[0])
+
+mi_lista.sort()
+print(mi_lista)
+
+
+mi_lista2 = []
+anio = None  
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2004.html')
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        anio_match = re.search(pattern1, line)
+        if anio_match:
+            anio = anio_match.group(0)
+            print(anio)
+
+    
+    result = re.search(pattern2, line)
+    if result:
+        resultRank = re.search(pattern3, line)
+        name = re.search(pattern4, line)
+        if resultRank and name and anio:
+            mi_lista2.append((anio, resultRank.group(0), name.group(0)))
+
+mi_lista2.sort(key=lambda x: x[2])
+print(mi_lista2)
+
+
+pos = 2  
+list_length = len(mi_lista2)
+for i in range(0, list_length):
+    for j in range(0, list_length - i - 1):
+        if mi_lista2[j][pos] > mi_lista2[j + 1][pos]:
+            temp = mi_lista2[j]
+            mi_lista2[j] = mi_lista2[j + 1]
+            mi_lista2[j + 1] = temp
+            
+print(mi_lista2)
+
+
+import re
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2006.html')
+           
+
+pattern = 'year'
+pattern1 = '\d{4}'
+pattern2 = '<tr align="right"><td>'
+pattern3 = '\d{1,}'
+pattern4 = '[A-Z][a-z]*'
+
+mi_diccionario = {}
+
+
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        print(result)
+        result = re.findall(pattern1, line)
+        if result:
+            print(result)
+
+    result = re.findall(pattern2, line)
+    if result:
+        resultRank = re.findall(pattern3, line)
+        print(resultRank)
+        
+        result = re.findall(pattern4, line)
+        if result:
+            print(result)
+            mi_diccionario[str(resultRank)] = result
+             
+print(mi_diccionario)
+
+
+mi_lista = []
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2006.html')
+for line in file:
+    result = re.findall(pattern4, line)
+    if result:
+        mi_lista.append(result[0])
+
+mi_lista.sort()
+print(mi_lista)
+
+
+mi_lista2 = []
+anio = None  
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2006.html')
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        anio_match = re.search(pattern1, line)
+        if anio_match:
+            anio = anio_match.group(0)
+            print(anio)
+
+    
+    result = re.search(pattern2, line)
+    if result:
+        resultRank = re.search(pattern3, line)
+        name = re.search(pattern4, line)
+        if resultRank and name and anio:
+            mi_lista2.append((anio, resultRank.group(0), name.group(0)))
+
+mi_lista2.sort(key=lambda x: x[2])
+print(mi_lista2)
+
+
+pos = 2  
+list_length = len(mi_lista2)
+for i in range(0, list_length):
+    for j in range(0, list_length - i - 1):
+        if mi_lista2[j][pos] > mi_lista2[j + 1][pos]:
+            temp = mi_lista2[j]
+            mi_lista2[j] = mi_lista2[j + 1]
+            mi_lista2[j + 1] = temp
+            
+print(mi_lista2)
+
+
+import re
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2008.html')
+           
+
+pattern = 'year'
+pattern1 = '\d{4}'
+pattern2 = '<tr align="right"><td>'
+pattern3 = '\d{1,}'
+pattern4 = '[A-Z][a-z]*'
+
+mi_diccionario = {}
+
+
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        print(result)
+        result = re.findall(pattern1, line)
+        if result:
+            print(result)
+
+    result = re.findall(pattern2, line)
+    if result:
+        resultRank = re.findall(pattern3, line)
+        print(resultRank)
+        
+        result = re.findall(pattern4, line)
+        if result:
+            print(result)
+            mi_diccionario[str(resultRank)] = result
+             
+print(mi_diccionario)
+
+
+mi_lista = []
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2008.html')
+for line in file:
+    result = re.findall(pattern4, line)
+    if result:
+        mi_lista.append(result[0])
+
+mi_lista.sort()
+print(mi_lista)
+
+
+mi_lista2 = []
+anio = None  
+
+file = open('C:\\Users\\Micaella\\Desktop\\Micaella\\data\\baby2008.html')
+for line in file:
+    result = re.findall(pattern, line)
+    if result:
+        anio_match = re.search(pattern1, line)
+        if anio_match:
+            anio = anio_match.group(0)
+            print(anio)
+
+    
+    result = re.search(pattern2, line)
+    if result:
+        resultRank = re.search(pattern3, line)
+        name = re.search(pattern4, line)
+        if resultRank and name and anio:
+            mi_lista2.append((anio, resultRank.group(0), name.group(0)))
+
+mi_lista2.sort(key=lambda x: x[2])
+print(mi_lista2)
+
+
+pos = 2  
+list_length = len(mi_lista2)
+for i in range(0, list_length):
+    for j in range(0, list_length - i - 1):
+        if mi_lista2[j][pos] > mi_lista2[j + 1][pos]:
+            temp = mi_lista2[j]
+            mi_lista2[j] = mi_lista2[j + 1]
+            mi_lista2[j + 1] = temp
+            
+print(mi_lista2)
